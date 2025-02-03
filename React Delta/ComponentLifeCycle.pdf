@@ -1,0 +1,78 @@
+# React Lifecycle Methods
+
+## Overview
+React lifecycle methods are used in **class-based components** to manage the state before the introduction of functional components. These methods allow us to override and execute code at different phases of the component lifecycle.
+
+## Lifecycle Phases
+React lifecycle methods are divided into four main categories:
+1. **Mounting**
+2. **Updating**
+3. **Unmounting**
+4. **Error Handling**
+
+---
+
+## 1. Mounting Phase
+The **Mounting phase** occurs when a component is added to the **DOM**. The following methods are executed in this order:
+
+- **constructor()**
+  - Called before the component is mounted.
+
+- **static getDerivedStateFromProps()**
+  - Invoked just before calling the render method.
+  - Returns an object to update the state.
+
+- **render()**
+  - The only required method.
+  - Responsible for rendering elements on the website.
+
+- **componentDidMount()**
+  - Called after the `render()` method.
+  - Suitable place to make **state updates** and call **external APIs**.
+
+---
+
+## 2. Updating Phase
+The **Updating phase** occurs when changes are made to the **state** or **props** of a component. The following methods are executed:
+
+- **static getDerivedStateFromProps()**
+  - First method called in the update phase.
+
+- **shouldComponentUpdate()**
+  - Called after `getDerivedStateFromProps()`.
+  - Determines whether the component should re-render.
+
+- **render()**
+  - Called after `getDerivedStateFromProps()` and `shouldComponentUpdate()`.
+
+- **getSnapshotBeforeUpdate()**
+  - Stores previous values of the state before the **DOM** is updated.
+
+- **componentDidUpdate(prevProps, prevState, snapshot)**
+  - Called after `getSnapshotBeforeUpdate()`.
+  - Can receive the snapshot value as a third argument.
+
+---
+
+## 3. Unmounting Phase
+The **Unmounting phase** occurs when a component is removed from the **DOM**. The following method is executed:
+
+- **componentWillUnmount()**
+  - Called just before the component is unmounted.
+
+---
+
+## 4. Error Handling Phase
+The **Error Handling phase** helps catch errors that occur in the application. The following methods are used:
+
+- **static getDerivedStateFromError()**
+  - Called when an error occurs in a **child component**.
+
+- **componentDidCatch(error, info)**
+  - Similar to `getDerivedStateFromProps()` but provides extra error information.
+  - Can also be used to call **external APIs**.
+
+---
+
+**Great job on finishing the notes! Ready for a challenge?** 🚀
+
