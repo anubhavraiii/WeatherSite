@@ -1,0 +1,11 @@
+/* .cardContainer{
+    display: flex;
+    justify-content: center;
+} */
+.InfoBox{
+    display: flex;
+    justify-content: center;
+}
+div h1{
+    display: inline-block;
+}
